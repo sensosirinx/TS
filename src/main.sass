@@ -1,0 +1,305 @@
+*
+  margin: 0
+  padding: 0
+  outline: none
+
+body
+  font-family: "PT Sans", sans-serif
+  background: #FFFFFF
+
+.content
+  width: 1000px
+  margin: 20px auto 0
+  border: 1px solid #ccc
+  border-radius: 8px
+  padding: 20px
+  display: flex
+  box-shadow: #e5e5e5 0 4px 32px
+  h1
+    text-align: center
+    margin-top: -10px
+    margin-bottom: 10px
+
+.loading
+  width: 100%
+  text-align: center
+  padding: 20px
+  font-size: 20px
+
+.error-list
+  text-align: center
+  padding: 20px
+  font-size: 20px
+  color: red
+
+.user-list-wrapper
+  width: 100%
+  position: relative
+
+.user-list-top-header
+  display: flex
+  justify-content: space-between
+  align-items: center
+  margin-bottom: 10px
+  .profile
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+    align-content: flex-start
+    .welcome
+      font-size: 14px
+      color: #4c9699
+
+.search-form
+  display: flex
+  align-items: center
+  margin-bottom: 10px
+  position: relative
+  .form-input
+    padding-right: 30px
+  .search-button
+    margin-left: -25px
+    border: 0
+    width: 16px
+    height: 14px
+    display: block
+    cursor: pointer
+    background: url("./assets/search.svg") 0 0 no-repeat
+    &:hover
+      opacity: 0.7
+
+.user-list, .user-list-header
+  width: 100%
+
+.user-list-header
+  margin-bottom: 10px
+  .user
+    font-weight: bold
+    text-align: center
+    &:first-child
+      background: #c8e4e5
+
+.user
+  display: flex
+  align-content: center
+  justify-content: space-between
+  align-items: center
+  padding: 4px 0
+  &:nth-child(odd)
+    background: #f1f1f1
+  div
+    width: 20%
+    &:first-child
+      padding-left: 5px
+
+.user_options
+  display: flex
+  justify-content: space-evenly
+  .empty
+    width: 16px
+
+.edit, .delete
+  border: 0
+  width: 16px
+  height: 16px
+  display: block
+  cursor: pointer
+  &:hover
+    opacity: 0.7
+
+.edit
+  background: url("./assets/edit.svg") 0 0 no-repeat
+
+.delete
+  background: url("./assets/delete.svg") 0 0 no-repeat
+
+.add-user
+  border: 0
+  height: 24px
+  display: flex
+  cursor: pointer
+  align-items: center
+  justify-content: flex-end
+  padding-left: 30px
+  color: #ef9105
+  background: url("./assets/add.svg") 0 0 no-repeat
+  &:hover
+    color: #54c47f
+
+.logout
+  border: 0
+  height: 24px
+  display: flex
+  cursor: pointer
+  align-items: center
+  justify-content: flex-end
+  color: #ef9105
+  background: #fff1dc
+  padding: 0 6px
+  &:hover
+    color: #54c47f
+    background: #f2ffdc
+
+.login-form
+  display: flex
+  flex-direction: column
+  width: 200px
+  margin: 0 auto
+  .login
+    border: 1px solid #ddd
+    margin-bottom: 10px
+    height: 42px
+    border-radius: 8px
+    background: #f1f1f1
+    padding-left: 5px
+    &.error
+      border-color: red
+  .log-in
+    display: flex
+    align-items: center
+    justify-content: center
+    background: #ffb13e
+    height: 42px
+    border: 0
+    border-radius: 8px
+    cursor: pointer
+    &:hover
+      background: #54c47f
+  .error-info
+    color: red
+    text-align: center
+    &.hidden
+      display: none
+
+.popup-overlay
+  position: fixed
+  width: 100%
+  height: 100%
+  top: 0
+  left: 0
+  background: rgba(0, 0, 0, 0.4)
+.popup
+  display: flex
+  flex-direction: column
+  position: fixed
+  width: 400px
+  border: 1px solid #ccc
+  border-radius: 8px
+  padding: 20px
+  background: #fff
+  top: 83px
+  left: calc(50% - 220px)
+  .popup-header
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    align-items: center
+    align-content: center
+    .popup-title
+      font-weight: bold
+      font-size: 18px
+    .close
+      background-color: #fff1dc
+      border-radius: 8px
+      height: 24px
+      width: 24px
+      border: 0
+      cursor: pointer
+      position: relative
+      &:before, &:after
+        background-color: #ef9105
+        content: ""
+        height: 2px
+        opacity: .7
+        position: absolute
+        right: calc(50% - 6px)
+        top: calc(50% - 1px)
+        transition: transform .4s ease
+        width: 12px
+      &:before
+        transform: rotate(-45deg)
+      &:after
+        transform: rotate(45deg)
+      &:hover
+        background-color: #f2ffdc
+        &:before, &:after
+          background-color: #54c47f
+
+.popup-content
+  margin-top: 20px
+
+.popup-error
+  text-align: center
+  color: red
+
+.input-field
+  width: 100%
+  display: flex
+  align-items: center
+  justify-content: space-between
+  margin-bottom: 15px
+  &:last-child
+    margin-bottom: 0
+    padding-top: 10px
+  label
+    span
+      color: red
+
+.form-input
+  border: 1px solid #ddd
+  height: 32px
+  border-radius: 8px
+  background: #f1f1f1
+  padding-left: 5px
+  width: 300px
+  &.error
+    border-color: red
+
+.popup-submit
+  border: 0
+  border-radius: 8px
+  height: 32px
+  display: flex
+  cursor: pointer
+  align-items: center
+  justify-content: flex-end
+  color: #ef9105
+  background: #fff1dc
+  padding: 0 32px
+  &:hover
+    color: #54c47f
+    background: #f2ffdc
+
+.popup-info
+  padding-top: 20px
+  .title
+    text-align: center
+    font-size: 16px
+  .input-field
+    justify-content: space-evenly
+
+.pagination
+  padding-top: 10px
+  display: flex
+  justify-content: center
+  div.nav-link, .dots
+    display: block
+    color: #a4a4a4
+    background: #f3f3f3
+    padding: 4px 8px
+    border-radius: 4px
+    text-decoration: none
+    margin: 0 4px
+  .dots
+    background: #ffffff
+  a.nav-link
+    display: block
+    color: #ef9105
+    background: #fff1dc
+    padding: 4px 8px
+    border-radius: 4px
+    text-decoration: none
+    margin: 0 4px
+    &:hover, &.active
+      color: #54c47f
+      background: #f2ffdc
